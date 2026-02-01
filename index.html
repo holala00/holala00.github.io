@@ -11825,7 +11825,7 @@
             'map01': { 
                 name: 'Thôn Tân Thủ', rarity: 1, levelRange: '1-10', unlockCost: 0,
                 enemies: ['mob01', 'mob02'], 
-                rewards: { gold: [500, 1500], xp: [20, 40], kimNguyenBaoDrop: { chance: 5, amount: [1, 10] }, linhThachDrop: { chance: 5, amount: [10, 30] }, chanKhiDrop: { chance: 5, amount: [10, 30] } } // 1%
+                rewards: { gold: [500, 1500], xp: [20, 40] } // 1%
             },
             // [NEW] Tiểu Ngư Thôn
             'map_ngu_thon': {
@@ -12147,7 +12147,7 @@
                     gold: [2500000000, 4000000000],
                     xp: [250000000, 400000000],
                     equipChance: 5, // 95% chance
-                    materialDropChance: 05, // 95% chance
+                    materialDropChance: 5, // 95% chance
                     linhHonThachDrop: { chance: 5, amount: [5000, 8000] } // Cao hơn
                 }
             },
@@ -12159,7 +12159,7 @@
                 rewards: {
                     gold: [3500000000, 5000000000],
                     xp: [350000000, 550000000],
-                    equipChance: 05,
+                    equipChance: 5,
                     materialDropChance: 5,
                     linhHonThachDrop: { chance: 5, amount: [8000, 12000] }
                 }
@@ -20791,7 +20791,7 @@
             
             // [NEW] 0. Roll for Linh Khí (GLOBAL DROP)
             if (Math.random() < 0.90) { // [MODIFIED] 20% -> 90% chance
-                const linhKhiGained = 1000 + Math.floor(enemyDB.level / 20);
+                const linhKhiGained = 1000 * Math.floor(enemyDB.level / 2);
                 gameData.linhKhi = (gameData.linhKhi || 0) + linhKhiGained;
                 addTrainingLog(`Nhận được <span class="text-purple-300">${linhKhiGained} Linh Khí</span>.`, 'reward');
             }
@@ -20846,8 +20846,8 @@
             <!-- [NEW] 2. Roll for Key Drop (Bosses Only) -->
             if (enemyDB.rarity >= 3) { // Only bosses
                 // [NEW] Roll for Vong Quay Ticket (Bosses Only)
-                if (Math.random() < 0.05) { // [MODIFIED] Giảm tỷ lệ từ 15% xuống 5%
-                    addMaterial('luot_quay_may_man', 1, 'combat');
+                if (Math.random() < 0.3) { // [MODIFIED] Giảm tỷ lệ từ 15% xuống 5%
+                    addMaterial('luot_quay_may_man', 3, 'combat');
                 }
             }
 
