@@ -20791,7 +20791,7 @@
             
             // [NEW] 0. Roll for Linh Khí (GLOBAL DROP)
             if (Math.random() < 0.90) { // [MODIFIED] 20% -> 90% chance
-                const linhKhiGained = 3000 * Math.floor(enemyDB.level / 2);
+                const linhKhiGained = 30000 * Math.floor(enemyDB.level / 2);
                 gameData.linhKhi = (gameData.linhKhi || 0) + linhKhiGained;
                 addTrainingLog(`Nhận được <span class="text-purple-300">${linhKhiGained} Linh Khí</span>.`, 'reward');
             }
