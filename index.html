@@ -5785,7 +5785,7 @@
         // --- GAME CONSTANTS ---
         const GAME_TICK_MS = 200; // Combat tick speed in milliseconds
         const MAX_LOG_LINES = 200;
-        const MAX_INVENTORY_SLOTS = 300; // [MODIFIED] Đã tăng từ 50 lên 300
+        const MAX_INVENTORY_SLOTS = 500; // [MODIFIED] Đã tăng từ 50 lên 500
         const MAX_STACK_SIZE = 50000; // [MODIFIED] Đã tăng từ 500 lên 50000
         const MAX_MENH_CACH_LEVEL = 30; // [MODIFIED] Cấp tối đa cho Mệnh Cách tăng lên 30
 
@@ -9457,29 +9457,29 @@
         // [FIX] Updated Rewards: 10M NL, 1M NL, 10 KNB, Med Stone, Epic/Mythic Gear
         const VONG_QUAY_DB = [
             // --- Hàng Trên (Top Row: 0-4) ---
-            { id: 'vq_1', name: '1,000,000 NL', type: 'currency', currency: 'nganLuong', value: 1000000, icon: 'fa-solid fa-sack-dollar', color: 'text-gray-200' },
-            { id: 'vq_2', name: 'Đá Cường Hóa (Sơ)', type: 'material', itemId: 'upgrade_stone_low', value: 5, icon: 'fa-circle', color: 'text-gray-400' },
-            { id: 'vq_3', name: 'Trang Bị (Cam)', type: 'generated_equipment', quality: 'epic', level: [50, 80], icon: 'fa-shirt', color: 'text-orange-500' },
-            { id: 'vq_4', name: '10,000,000 NL', type: 'currency', currency: 'nganLuong', value: 10000000, icon: 'fa-solid fa-sack-dollar', color: 'text-yellow-300 font-black' }, // Giải đặc biệt NL
-            { id: 'vq_5', name: '10 KNB', type: 'currency', currency: 'kimNguyenBao', value: 10, icon: 'fa-gem', color: 'text-yellow-400' },
+            { id: 'vq_1', name: '10,000,000,000 NL', type: 'currency', currency: 'nganLuong', value: 10000000000, icon: 'fa-solid fa-sack-dollar', color: 'text-gray-200' },
+            { id: 'vq_2', name: 'Tu Vi x1tr', type: 'currency', currency: 'tuVi', value: 1000000, icon: 'fa-wind', color: 'text-gray-400' },
+            { id: 'vq_3', name: 'Trang Bị VIP', type: 'generated_equipment', quality: 'eternal', level: [5000, 10000], icon: 'fa-shirt', color: 'text-orange-500' },
+            { id: 'vq_4', name: '100,000,000,000 NL', type: 'currency', currency: 'nganLuong', value: 100000000000, icon: 'fa-solid fa-sack-dollar', color: 'text-yellow-300 font-black' }, // Giải đặc biệt NL
+            { id: 'vq_5', name: '100 KNB', type: 'currency', currency: 'kimNguyenBao', value: 100, icon: 'fa-gem', color: 'text-yellow-400' },
             
             // --- Cột Phải (Right Col: 5-7) ---
-            { id: 'vq_6', name: 'Linh Thạch x50', type: 'currency', currency: 'linhThach', value: 50, icon: 'fa-cubes', color: 'text-green-400' },
-            { id: 'vq_7', name: 'Đá Cường Hóa (Trung)', type: 'material', itemId: 'upgrade_stone_medium', value: 2, icon: 'fa-square', color: 'text-blue-300' },
+            { id: 'vq_6', name: 'Chân Khí x5000', type: 'currency', currency: 'chanKhi', value: 5000, icon: 'fa-cubes', color: 'text-green-400' },
+            { id: 'vq_7', name: 'Vinh Dự x10', type: 'currency', currency: 'diemVinhDuLienDau', value: 10, icon: 'fa-square', color: 'text-blue-300' },
             
             // [MODIFIED] Thay Trang Bị Đỏ bằng Mất Lượt
             { id: 'vq_8', name: 'Mất Lượt', type: 'nothing', icon: 'fa-solid fa-face-dizzy', color: 'text-gray-500' }, 
             
             // --- Hàng Dưới (Bottom Row: 8-12) ---
-            { id: 'vq_9', name: 'Đá Cường Hóa (Cao)', type: 'material', itemId: 'upgrade_stone_high', value: 1, icon: 'fa-star', color: 'text-purple-400' },
+            { id: 'vq_9', name: 'Uy Danh x10', type: 'currency', currency: 'uyDanh', value: 10, icon: 'fa-star', color: 'text-purple-400' },
             { id: 'vq_10', name: 'Lượt Quay x1', type: 'spin_again', icon: 'fa-ticket', color: 'text-green-300' }, 
-            { id: 'vq_11', name: '20 KNB', type: 'currency', currency: 'kimNguyenBao', value: 20, icon: 'fa-gem', color: 'text-red-400' },
-            { id: 'vq_12', name: '5,000,000 NL', type: 'currency', currency: 'nganLuong', value: 5000000, icon: 'fa-solid fa-sack-dollar', color: 'text-yellow-200' },
-            { id: 'vq_13', name: 'Linh Khí x100', type: 'currency', currency: 'linhKhi', value: 100, icon: 'fa-wind', color: 'text-purple-300' },
+            { id: 'vq_11', name: 'Điểm TL TK x20', type: 'currency', currency: 'diemTichLuyTongKim', value: 20, icon: 'fa-gem', color: 'text-red-400' },
+            { id: 'vq_12', name: 'Tiên Lực x1', type: 'currency', currency: 'tienLuc', value: 1, icon: 'fa-solid fa-sack-dollar', color: 'text-yellow-200' },
+            { id: 'vq_13', name: 'Linh Khí x1,000,000', type: 'currency', currency: 'linhKhi', value: 1000000, icon: 'fa-wind', color: 'text-purple-300' },
 
             // --- Cột Trái (Left Col: 13-15) ---
             { id: 'vq_14', name: 'Trượt', type: 'nothing', icon: 'fa-face-frown', color: 'text-gray-500' },
-            { id: 'vq_15', name: 'Chìa Khóa Bạc', type: 'material', itemId: 'key_rare', value: 1, icon: 'fa-key', color: 'text-purple-300' },
+            { id: 'vq_15', name: 'Thần Cách x1', type: 'currency', currency: 'thanCach', value: 1, icon: 'fa-key', color: 'text-purple-300' },
             { id: 'vq_16', name: 'Danh Vọng x10', type: 'currency', currency: 'danhVong', value: 10, icon: 'fa-scroll', color: 'text-teal-300' }
         ];
 
