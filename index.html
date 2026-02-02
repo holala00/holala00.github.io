@@ -13324,7 +13324,7 @@
                 }
                 
                 // Drop Equip
-                if (Math.random() * 100 < (rewards.equipChance || 20)) {
+                if (Math.random() * 100 > (rewards.equipChance || 0)) {
                     const newItem = generateEquipment(enemyDB.level);
                     if (countInventorySlots() < MAX_INVENTORY_SLOTS) {
                         gameData.gearInventory.push(newItem);
@@ -36706,7 +36706,7 @@
                 
                 // 5. Drop Equipment
                 const equipChance = rewards.equipChance || 0;
-                if (Math.random() * 100 < equipChance) {
+                if (Math.random() * 100 > equipChance) {
                     const newItem = generateEquipment(enemyDB.level || 1);
                     if (countInventorySlots() < MAX_INVENTORY_SLOTS) {
                         gameData.gearInventory.push(newItem);
