@@ -20113,7 +20113,8 @@
             { id: 'manasteal', name: 'Hút Nội Lực', baseValue: 0.1, isPercent: true },
             { id: 'xp_boost', name: 'Tăng KN', baseValue: 0.5, isPercent: true },
             { id: 'ignoreDef_p', name: 'Bỏ qua DEF', baseValue: 0.2, isPercent: true },
-			{ id: 'onehit', name: 'Tuyệt Sát (1-Hit)', baseValue: 1, isPercent: false }
+			{ id: 'onehit', name: 'Tuyệt Sát (1-Hit)', baseValue: 1, isPercent: false },
+			{ id: 'immortality', name: 'Bất Tử (God Mode)', baseValue: 1, isPercent: false }
         ];
 
         // [FIX] Bổ sung lại BASE_ITEM_DB (Database Trang Bị Cơ Bản) bị thiếu
@@ -21334,6 +21335,9 @@
                 const overtimeDamage = Math.max(0, gameData.combatState.turnCount - 20);
                 let damage = Math.max(1, enemyStats.atk * (enemySkill.multiplier || 1) - playerStats.def);
                 damage = Math.floor(damage + overtimeDamage); // Apply overtime
+					if (playerStats.immortality > 0) {
+						damage = 0; // Sát thương về 0
+					}
                 
                 gameData.player.currentHp -= damage;
                 
@@ -22626,6 +22630,7 @@
                                 ${statRow('Kháng Bạo', displayStats.anti_crit_p, 'fa-solid fa-shield-heart', 'text-pink-300', true)}
                                 ${statRow('Kinh Nghiệm', displayStats.xp_boost, 'fa-solid fa-book-open', 'text-yellow-200', true)}
 								${displayStats.onehit > 0 ? statRow('TUYỆT SÁT', displayStats.onehit, 'fa-solid fa-skull-crossbones', 'text-red-600 animate-pulse', false) : ''}
+								${displayStats.immortality > 0 ? statRow('TRẠNG THÁI', 'BẤT TỬ', 'fa-solid fa-shield-halved', 'text-yellow-400 animate-pulse', false) : ''}
                             </div>
                         </div>
                     </div>
@@ -36367,6 +36372,9 @@
             const enemySkill = enemyDB.skills[0] || { multiplier: 1 };
             let damage = Math.max(1, enemy.stats.atk * (enemySkill.multiplier || 1) - target.stats.def);
             damage = Math.floor(damage);
+				if (playerStats.immortality > 0) {
+					damage = 0; // Sát thương về 0
+				}
             
             // Áp dụng sát thương
             if (target.type === 'player') {
