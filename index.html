@@ -20773,7 +20773,7 @@
                 // --- Standard Rewards ---
                 goldGained = Math.floor(Math.random() * (mapData.rewards.gold[1] - mapData.rewards.gold[0] + 1)) + mapData.rewards.gold[0];
                 xpGained = Math.floor(Math.random() * (mapData.rewards.xp[1] - mapData.rewards.xp[0] + 1)) + mapData.rewards.xp[0];
-                equipRollChance = mapData.rewards.equipChance || 20;
+                equipRollChance = mapData.rewards.equipChance || 0.1;
                 materialRollChance = mapData.rewards.materialDropChance || 20; // NEW: Chance for stones
             }
             
