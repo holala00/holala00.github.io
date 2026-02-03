@@ -5783,11 +5783,11 @@
 
     <script>
         // --- GAME CONSTANTS ---
-        const GAME_TICK_MS = 1400; // Combat tick speed in milliseconds
+        const GAME_TICK_MS = 500; // Combat tick speed in milliseconds
         const MAX_LOG_LINES = 200;
-        const MAX_INVENTORY_SLOTS = 300; // [MODIFIED] Đã tăng từ 50 lên 300
+        const MAX_INVENTORY_SLOTS = 500; // [MODIFIED] Đã tăng từ 50 lên 300
         const MAX_STACK_SIZE = 50000; // [MODIFIED] Đã tăng từ 500 lên 50000
-        const MAX_MENH_CACH_LEVEL = 30; // [MODIFIED] Cấp tối đa cho Mệnh Cách tăng lên 30
+        const MAX_MENH_CACH_LEVEL = 100; // [MODIFIED] Cấp tối đa cho Mệnh Cách tăng lên 30
 
         // [NEW] Cultivation Realms Database (Cảnh Giới)
         // [MODIFIED] Rebalanced bonus stats to meet new max targets:
@@ -20802,7 +20802,7 @@
             
             // [NEW] 0. Roll for Linh Khí (GLOBAL DROP)
             if (Math.random() < 0.90) { // [MODIFIED] 20% -> 90% chance
-                const linhKhiGained = 1 + Math.floor(enemyDB.level / 1);
+                const linhKhiGained = 1000 * Math.floor(enemyDB.level / 1);
                 gameData.linhKhi = (gameData.linhKhi || 0) + linhKhiGained;
                 addTrainingLog(`Nhận được <span class="text-purple-300">${linhKhiGained} Linh Khí</span>.`, 'reward');
             }
