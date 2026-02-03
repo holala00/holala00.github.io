@@ -11824,7 +11824,8 @@
         const DUNGEONS_DB = {
             'map01': { 
                 name: 'Thôn Tân Thủ', rarity: 1, levelRange: '1-10', unlockCost: 0,
-                enemies: ['ctvt_mob_1', 'ctvt_mob_2', 'ctvt_boss'], 
+                enemies: ['ctvt_mob_1', 'ctvt_mob_2'],
+				boss: 'ctvt_boss', 
                 rewards: {
                     gold: [46129675956231029, 92259351912462058], // +2%
                     xp: [1845194567292922945, 4612980613831408529], // +2%
@@ -11832,6 +11833,7 @@
                     materialDropChance: 1.0,
                     linhHonThachDrop: { chance: 1.0, amount: [21794903171, 45405149957] } 
                 }
+			},
             // [NEW] Tiểu Ngư Thôn
             'map_ngu_thon': {
                 name: 'Tiểu Ngư Thôn', rarity: 2, levelRange: '5-15', unlockCost: 25000,
